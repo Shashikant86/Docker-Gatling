@@ -1,4 +1,6 @@
 #!/bin/bash
+
+GATLING_VERSION=2.2.5
 cd ${WORKSPACE}
 
 # Remove old Gatling reports and version Download New

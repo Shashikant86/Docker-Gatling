@@ -1,5 +1,5 @@
 #!/bin/bash
-GATLING_VERSION=2.1.7
+GATLING_VERSION=2.2.5
 
 # Remove old Gatling reports and version Download New
 
