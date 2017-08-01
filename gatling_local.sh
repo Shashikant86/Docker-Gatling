@@ -9,13 +9,15 @@ rm -rf gatling-${GATLING_VERSION}.zip/
 
 echo "======== Downloading Gatling Framework from Web ========== "
 echo "*********************************\n "
+echo "========Please be patient as it wil take some tme depending on network========\n"
+
 curl -sf -o gatling-${GATLING_VERSION}.zip \
   -L https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/${GATLING_VERSION}/gatling-charts-highcharts-bundle-${GATLING_VERSION}-bundle.zip
 ls
 echo "======== Gatling Zip successfully downloaded ========== "
 echo "*********************************\n "
 
-echo "======== Unziping Gatling. Please be patient as it wil take some tme depending on network ========== "
+echo "======== Unziping Gatling ========== "
 echo "*********************************\n "
 unzip gatling-${GATLING_VERSION}.zip
 
