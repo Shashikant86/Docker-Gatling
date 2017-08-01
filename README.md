@@ -62,11 +62,11 @@ This will execute default simulation.
 *  Run container using the downloaded images with mounted simulation 
 
 
-    ```  docker run -it -d --rm -v conf:/opt/gatling/conf \
+    `docker run -it -d --rm -v conf:/opt/gatling/conf \
   -v user-files:/opt/gatling/user-files \
   -v results:/opt/gatling/results \
   --name docker-gatling-container shashikant86/docker-gatling
-  ```
+  `
 
  OR
  
