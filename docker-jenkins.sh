@@ -1,7 +1,7 @@
 #!/bin/bash
 CLASS=$1
-CONTAINER_NAME="gatling-jenkins-docker"
-IMAGE_NAME="gatling-jenkins-docker"
+CONTAINER_NAME="docker-gatling-container"
+IMAGE_NAME="shashikant86/docker-gatling"
 
 
 function check_image_exist {
@@ -33,7 +33,7 @@ function check_container_exist {
 
    echo -e "\n *** Deleting old unused containers"
 
-   docker rm $(docker ps -a | grep 'gatling-jenkins-docker' | awk '{print $3}')
+   docker rm $(docker ps -a | grep 'docker-gatling-container' | awk '{print $3}')
 
   echo -e "\n*** Checking if the container exists ***\n"
 
@@ -55,11 +55,12 @@ function start_container_with_Gatling {
 }
 
 function stop_container {
-docker stop ${CONTAINER_NAME} /opt/gatling/bin/gatling.sh
+docker stop ${CONTAINER_NAME} 
 }
 
 function run_gatling_test {
-docker exec ${CONTAINER_NAME} /opt/gatling/bin/gatling.sh -s $CLASS
+docker exec ${CONTAINER_NAME} /opt/gatling/bin/gatling.sh /opt/gatling/bin/gatling.sh -sf /opt/gatling/user-files/simulations/ -s computerdatabase
+.BasicSimulation -rf /opt/gatling/results/
 }
 
 function copy_gatling_reports_to_workspace {
