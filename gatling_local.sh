@@ -2,15 +2,14 @@
 GATLING_VERSION=2.2.5
 
 # Remove old Gatling reports and version Download New
-echo "======== Remove old Gatling Snapshot if it's there  ========== "
+echo "======== Remove old Gatling Snapshot if already exist ========== "
 echo "*********************************\n "
 rm -rf gatling-charts-highcharts-bundle-${GATLING_VERSION}/
 rm -rf gatling-${GATLING_VERSION}.zip/
 
 echo "======== Downloading Gatling Framework from Web ========== "
 echo "*********************************\n "
-echo "========Please be patient as it wil take some tme depending on network========\n"
-
+echo "========Please be patient as it might take some time depending on the network speed ========\n"
 curl -sf -o gatling-${GATLING_VERSION}.zip \
   -L https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/${GATLING_VERSION}/gatling-charts-highcharts-bundle-${GATLING_VERSION}-bundle.zip
 ls
